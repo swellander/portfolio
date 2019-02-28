@@ -41,11 +41,14 @@ template {
 }
 a {
   background-color: transparent;
+  color: inherit;
   -webkit-text-decoration-skip: objects;
+  transition: 0.18s;
 }
 a:active,
 a:hover {
   outline-width: 0;
+  color: #ffcd00;
 }
 abbr[title] {
   border-bottom: none;

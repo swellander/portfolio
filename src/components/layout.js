@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from "gatsby";
 
 import Header from "./header";
 import "./layout.css";
+import Menu from "./Menu";
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -22,6 +23,7 @@ const Layout = ({ children }) => (
         <div
           style={{
             minHeight: "100vh",
+            flexDirection: "column",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -32,10 +34,13 @@ const Layout = ({ children }) => (
           }}
         >
           <main>{children}</main>
-          <footer>
-            {/* © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a> */}
+          <footer
+            style={{
+              position: "absolute",
+              bottom: "0"
+            }}
+          >
+            <Menu />© {new Date().getFullYear()} Sam Wellander
           </footer>
         </div>
       </>
