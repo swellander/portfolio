@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { IoIosMail, IoLogoGithub } from "react-icons/io";
 import { FiMail } from "react-icons/fi";
 
 const styles = {
@@ -12,7 +11,7 @@ const styles = {
   margin: "auto"
 };
 
-const Menu = ({ siteTitle }) => {
+const MediaLinks = () => {
   return (
     <div style={styles}>
       <a href={"https://github.com/swellander"}>
@@ -28,12 +27,12 @@ const Menu = ({ siteTitle }) => {
   );
 };
 
-Menu.propTypes = {
+MediaLinks.propTypes = {
   siteTitle: PropTypes.string
 };
 
-Menu.defaultProps = {
+MediaLinks.defaultProps = {
   siteTitle: ``
 };
 
-export default Menu;
+export default MediaLinks;

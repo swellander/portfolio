@@ -2,9 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 
-import Header from "./header";
 import "./layout.css";
-import Menu from "./Menu";
+import MediaLinks from "./MediaLinks";
+
+const styles = {
+  footer: {
+    position: "absolute",
+    bottom: "0",
+    display: "flex",
+    justifyContent: "center",
+    width: "100vw"
+  },
+  mediaLinks: {
+    width: 200,
+    marginBottom: 20
+  }
+};
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -19,28 +32,13 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-        <div
-          style={{
-            minHeight: "100vh",
-            flexDirection: "column",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0
-          }}
-        >
+        <div>
           <main>{children}</main>
-          <footer
-            style={{
-              position: "absolute",
-              bottom: "0"
-            }}
-          >
-            <Menu />© {new Date().getFullYear()} Sam Wellander
+          <footer style={styles.footer}>
+            <div style={styles.mediaLinks}>
+              <MediaLinks />
+              {/* <p>© {new Date().getFullYear()} Sam Wellander</p> */}
+            </div>
           </footer>
         </div>
       </>
